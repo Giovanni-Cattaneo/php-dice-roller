@@ -4,11 +4,15 @@ $dice = $_GET["dice"];
 
 $proficency = $_GET["proficency"];
 
+$char = !empty($_GET["char"]) ? $_GET["char"] : 0;
+
+$diceValue = rand(1, $dice);
+
 // echo ($dice);
 
 if (isset($dice) && isset($proficency)) {
-    $diceValue = rand(1, $dice);
-    echo ($diceValue + $proficency);
+    $total = $diceValue + $proficency + $char;
+    echo ($total);
 }
 
 ?>
@@ -150,6 +154,22 @@ if (isset($dice) && isset($proficency)) {
                         value="6" />
                     <label class="form-check-label" for="">+6</label>
                 </div>
+            </div>
+
+            <div class="mod_container">
+                <div class="mb-3">
+                    <label for="" class="form-label"></label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        name="char"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder="" />
+                    <small id="helpId" class="form-text text-muted">Inserisci il modificatore caratteristica</small>
+                </div>
+
+
             </div>
 
             <button
