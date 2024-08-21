@@ -1,18 +1,27 @@
 <?php
 
-$dice = $_GET["dice"];
+$dice = !empty($_GET["dice"]) ? $_GET["dice"] : 20;
 
-$proficency = $_GET["proficency"];
+$proficency = !empty($_GET["proficency"]) ? $_GET["proficency"] : 0;
+
+$weaponMod = !empty($_GET["weapon_mod"]) ? $_GET["weapon_mod"] : 0;
 
 $char = !empty($_GET["char"]) ? $_GET["char"] : 0;
 
-$diceValue = rand(1, $dice);
+$diceNumber = !empty($_GET["dice_number"]) && $_GET["dice_number"] > 0  ? $_GET["dice_number"] : 1;
+
+
 
 // echo ($dice);
 
 if (isset($dice) && isset($proficency)) {
-    $total = $diceValue + $proficency + $char;
-    echo ($total);
+
+    for ($i = 0; $i < $diceNumber; $i++) {
+        $diceValue = rand(1, $dice);
+        $total = $diceValue + $proficency + $char + $weaponMod;
+        echo ($total);
+        echo ("|");
+    }
 }
 
 ?>
@@ -106,7 +115,49 @@ if (isset($dice) && isset($proficency)) {
                         value="100" />
                     <label class="form-check-label" for="">d100</label>
                 </div>
+                <div class="mb-3">
+                    <input
+                        type="number"
+                        class="form-control"
+                        name="dice_number"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder="" />
+                    <small id="helpId" class="form-text text-muted">Quante volte vuoi tirare</small>
+                </div>
             </div>
+
+            <div class="weapon_container d-flex">
+                <label class="form-check-label" for="">Add Weapon Bonus</label>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weapon_mod"
+                        id=""
+                        value="1" />
+                    <label class="form-check-label" for="">+1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weapon_mod"
+                        id=""
+                        value="2" />
+                    <label class="form-check-label" for="">+2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weapon_mod"
+                        id=""
+                        value="3" />
+                    <label class="form-check-label" for="">+3</label>
+                </div>
+            </div>
+
             <div class="proficency_container d-flex">
                 <label class="form-check-label" for="">Add your proficency</label>
                 <div class="form-check form-check-inline">
@@ -178,7 +229,12 @@ if (isset($dice) && isset($proficency)) {
                 Tira
             </button>
 
-        </form>
+    </div>
+
+
+
+
+    </form>
     </div>
 
 
