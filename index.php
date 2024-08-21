@@ -1,5 +1,16 @@
 <?php
 
+$dice = $_GET["dice"];
+
+$proficency = $_GET["proficency"];
+
+// echo ($dice);
+
+if (isset($dice) && isset($proficency)) {
+    $diceValue = rand(1, $dice);
+    echo ($diceValue + $proficency);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +26,141 @@
 </head>
 
 <body>
+    <div class="container">
+        <form class="d-flex flex-column  gap-3 align-items-center" action="index.php" method="get">
+            <div class="dice_container d-flex">
+                <label class="form-check-label" for="">Choose the dice</label>
+                <div class="form-check form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="2" />
+                    <label class="form-check-label" for="">coin</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="4" />
+                    <label class="form-check-label" for="">d4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="6" />
+                    <label class="form-check-label" for="">d6</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="8" />
+                    <label class="form-check-label" for="">d8</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="10" />
+                    <label class="form-check-label" for="">d10</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="12" />
+                    <label class="form-check-label" for="">d12</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="20" />
+                    <label class="form-check-label" for="">d20</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="dice"
+                        id=""
+                        value="100" />
+                    <label class="form-check-label" for="">d100</label>
+                </div>
+            </div>
+            <div class="proficency_container d-flex">
+                <label class="form-check-label" for="">Add your proficency</label>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="proficency"
+                        id=""
+                        value="2" />
+                    <label class="form-check-label" for="">+2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="proficency"
+                        id=""
+                        value="3" />
+                    <label class="form-check-label" for="">+3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="proficency"
+                        id=""
+                        value="4" />
+                    <label class="form-check-label" for="">+4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="proficency"
+                        id=""
+                        value="5" />
+                    <label class="form-check-label" for="">+5</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="proficency"
+                        id=""
+                        value="6" />
+                    <label class="form-check-label" for="">+6</label>
+                </div>
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+                Tira
+            </button>
+
+        </form>
+    </div>
+
 
 </body>
 
