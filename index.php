@@ -14,16 +14,6 @@ $diceNumber = !empty($_GET["dice_number"]) && $_GET["dice_number"] > 0  ? $_GET[
 
 // echo ($dice);
 
-if (isset($dice) && isset($proficency)) {
-
-    for ($i = 0; $i < $diceNumber; $i++) {
-        $diceValue = rand(1, $dice);
-        $total = $diceValue + $proficency + $char + $weaponMod;
-        echo ($total);
-        echo ("|");
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -228,6 +218,32 @@ if (isset($dice) && isset($proficency)) {
                 class="btn btn-primary">
                 Tira
             </button>
+
+
+            <div class="card_section d-flex gap-3 flex-wrap">
+                <?php
+                if (isset($dice) && isset($proficency)) {
+
+                    for ($i = 0; $i < $diceNumber; $i++) {
+                        $diceValue = rand(1, $dice);
+                        $total = $diceValue + $proficency + $char + $weaponMod;
+
+                ?>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Ecco il tuo tiro</h4>
+                                <p class="card-text">Dado <?php echo ($diceValue) ?></p>
+                                <p class="card-text">Weapon bonus +<?php echo ($weaponMod) ?></p>
+                                <p class="card-text">Proficency +<?php echo ($proficency) ?></p>
+                                <p class="card-text">Mod char +<?php echo ($char) ?></p>
+                                <p class="card-text">Total = <?php echo ($total) ?></p>
+                            </div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+            </div>
 
     </div>
 
