@@ -39,7 +39,7 @@ $diceNumber = !empty($_GET["dice_number"]) && $_GET["dice_number"] > 0  ? $_GET[
                     <h4>Choose the dice</h4>
                 </label>
                 <div class="dice_container d-flex align-items-center">
-                    <div class="form-check form-check">
+                    <div class="form-check form-check px-2">
                         <input
                             class="form-check-input"
                             type="radio"
