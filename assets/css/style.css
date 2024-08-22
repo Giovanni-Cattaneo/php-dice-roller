@@ -5,4 +5,15 @@
     background-color: antiquewhite;
 }
 
-body {}
+body {
+
+    .green {
+        color: rgb(0, 184, 0);
+        font-size: 2rem;
+    }
+
+    .red {
+        color: red;
+        font-size: 2rem;
+    }
+}

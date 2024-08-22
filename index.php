@@ -236,7 +236,14 @@ $diceNumber = !empty($_GET["dice_number"]) && $_GET["dice_number"] > 0  ? $_GET[
                                 <p class="card-text">Weapon bonus +<?php echo ($weaponMod) ?></p>
                                 <p class="card-text">Proficency +<?php echo ($proficency) ?></p>
                                 <p class="card-text">Mod char +<?php echo ($char) ?></p>
-                                <p class="card-text">Total = <?php echo ($total) ?></p>
+                                <?php if ($diceValue === 20) : ?>
+                                    <p class="card-text ">Total = <span class="green"><?php echo ($total) ?> <i class="fa-solid fa-trophy"></i></span></p>
+                                <?php elseif ($diceValue === 1) : ?>
+                                    <p class="card-text ">Total = <span class="red"><?php echo ($total) ?> <i class="fa-solid fa-skull"></i></span> </p>
+                                <?php else : ?>
+                                    <p class="card-text">Total = <?php echo ($total) ?></p>
+                                <?php endif; ?>
+
                             </div>
                         </div>
                 <?php
@@ -246,9 +253,6 @@ $diceNumber = !empty($_GET["dice_number"]) && $_GET["dice_number"] > 0  ? $_GET[
             </div>
 
     </div>
-
-
-
 
     </form>
     </div>
