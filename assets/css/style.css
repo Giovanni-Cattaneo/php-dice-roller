@@ -2,18 +2,61 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: antiquewhite;
 }
 
-body {
+.body {
+    background-color: antiquewhite;
 
-    .green {
-        color: rgb(0, 184, 0);
-        font-size: 2rem;
+    header {
+        background-color: lightblue;
+        text-align: center;
+        padding: 1rem;
     }
 
-    .red {
-        color: red;
-        font-size: 2rem;
+    main {
+        padding-top: 3rem;
+
+        .container {
+            background-color: antiquewhite;
+        }
+
+        .green {
+            color: rgb(0, 184, 0);
+            font-size: 2rem;
+        }
+
+        .red {
+            color: red;
+            font-size: 2rem;
+        }
+
+        table {
+            display: inline;
+            margin: 1rem;
+
+            & td {
+                border: 1px solid;
+                width: 120px;
+            }
+
+        }
+
+        .mod,
+        .proficency {
+            position: absolute;
+        }
+
+        .mod {
+            left: 1rem;
+            top: 10rem;
+        }
+
+        .proficency {
+            left: 1rem;
+            top: 35rem;
+        }
+
     }
+
+
 }
