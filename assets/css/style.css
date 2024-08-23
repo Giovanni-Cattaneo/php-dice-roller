@@ -33,6 +33,7 @@
         table {
             display: inline;
             margin: 1rem;
+            text-align: center;
 
             & td {
                 border: 1px solid;
@@ -44,15 +45,14 @@
         .mod,
         .proficency {
             position: absolute;
+            left: 1rem;
         }
 
         .mod {
-            left: 1rem;
             top: 10rem;
         }
 
         .proficency {
-            left: 1rem;
             top: 35rem;
         }
 

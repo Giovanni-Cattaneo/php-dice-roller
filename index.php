@@ -10,10 +10,21 @@ $char = !empty($_GET["char"]) && $_GET["char"] >= -5 && $_GET["char"] <= 7 ? $_G
 
 $diceNumber = !empty($_GET["dice_number"]) && $_GET["dice_number"] > 0  ? $_GET["dice_number"] : 1;
 
+// class Dice
+// {
+//     public $value;
+// }
 
+// $d20 = new Dice();
+
+// $d20->value = 20;
+
+// $d12 = new Dice();
+// $d12->value = 12;
+
+//esempio da non considerare
 
 // echo ($dice);
-
 ?>
 
 <!DOCTYPE html>
